@@ -13,8 +13,8 @@ class MealItem extends StatelessWidget {
       AppRoutes.MEAL_DETAIL,
       arguments: meal,
     ).then((result) {
-      if(result == null) {
-        print('Sem resultado!');
+      if (result == null) {
+        print('Sem Resultado!');
       } else {
         print('O nome da refeição é $result.');
       }
@@ -48,8 +48,8 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: 10,
                   bottom: 20,
+                  right: 10,
                   child: Container(
                     width: 300,
                     color: Colors.black54,
@@ -98,7 +98,7 @@ class MealItem extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

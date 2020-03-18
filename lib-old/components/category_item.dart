@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/category.dart';
+
 import '../utils/app_routes.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -9,6 +10,15 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem(this.category);
 
   void _selectCategory(BuildContext context) {
+    // Jeito mais simples
+    // Navigator.of(context).push(
+    //   MaterialPageRoute(
+    //     builder: (_) {
+    //       return CategoriesMealsScreen(category);
+    //     },
+    //   ),
+    // );
+
     Navigator.of(context).pushNamed(
       AppRoutes.CATEGORIES_MEALS,
       arguments: category,
@@ -28,16 +38,15 @@ class CategoryItem extends StatelessWidget {
           style: Theme.of(context).textTheme.title,
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            colors: [
-              category.color.withOpacity(0.5),
-              category.color,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [
+                category.color.withOpacity(0.5),
+                category.color,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            )),
       ),
     );
   }

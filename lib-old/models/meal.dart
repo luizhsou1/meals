@@ -20,12 +20,12 @@ class Meal {
   final List<String> ingredients;
   final List<String> steps;
   final int duration;
+  final Complexity complexity;
+  final Cost cost;
   final bool isGlutenFree;
   final bool isLactoseFree;
   final bool isVegan;
   final bool isVegetarian;
-  final Complexity complexity;
-  final Cost cost;
 
   const Meal({
     @required this.id,
@@ -35,16 +35,16 @@ class Meal {
     @required this.ingredients,
     @required this.steps,
     @required this.duration,
+    @required this.complexity,
+    @required this.cost,
     @required this.isGlutenFree,
     @required this.isLactoseFree,
     @required this.isVegan,
     @required this.isVegetarian,
-    @required this.complexity,
-    @required this.cost,
   });
 
   String get complexityText {
-    switch (complexity) {
+    switch(complexity) {
       case Complexity.Simple:
         return 'Simples';
       case Complexity.Medium:
@@ -57,7 +57,7 @@ class Meal {
   }
 
   String get costText {
-    switch (cost) {
+    switch(cost) {
       case Cost.Cheap:
         return 'Barato';
       case Cost.Fair:
@@ -65,7 +65,7 @@ class Meal {
       case Cost.Expensive:
         return 'Caro';
       default:
-        return 'Desconhecido';
+        return 'Desconhecida';
     }
   }
 }
